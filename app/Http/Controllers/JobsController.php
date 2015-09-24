@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Job;
 
 class JobsController extends Controller
 {
@@ -14,9 +15,12 @@ class JobsController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index(Job $jobs)
     {
-        return 'hello world';
+        // return response()->json(['name' => 'Abigail', 'state' => 'CA']);
+        // 
+        // Returns all jobs as Json data
+        return $jobs->all()->toArray();
     }
 
     /**
