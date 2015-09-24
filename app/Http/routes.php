@@ -14,3 +14,9 @@
 $app->get('/', function () use ($app) {
     return $app->welcome();
 });
+
+// Below doesn't work in Lumen - Routes have to be defined individually
+
+// Route::resource('jobs', 'JobsController');
+
+$app->get('api/jobs','JobsController@index');
