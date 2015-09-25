@@ -19,4 +19,7 @@ $app->get('/', function () use ($app) {
 
 // Route::resource('jobs', 'JobsController');
 
-$app->get('api/jobs','JobsController@index');
+$app->group(['prefix' => 'api'], function($app)
+{
+});
+	$app->get('jobs','JobsController@index');
